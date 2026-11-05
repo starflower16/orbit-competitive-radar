@@ -1,0 +1,14 @@
+{
+  "name": "orbit-market-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A polished zero-dependency competitor research and social trend intelligence workspace.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

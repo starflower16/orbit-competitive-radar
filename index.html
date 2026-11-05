@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Orbit 产品调研工作台：整合用户反馈、竞品情报与 AI 分析。" />
+  <meta property="og:title" content="Orbit · 产品调研工作台" />
+  <meta property="og:description" content="从用户反馈与竞品信号中，形成可验证的产品决策。" />
+  <meta property="og:type" content="website" />
+  <title>项目总览 · Orbit</title>
+  <link rel="icon" href="assets/favicon.svg?v=28" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css?v=28" />
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+      <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 3.5V12l6.5 4.5"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.5a8.5 8.5 0 1 1 15.6-4.5Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="m16 8 4-4M17 4h3v3"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.35 4.15L17.5 8.5l-4.15 1.35L12 14l-1.35-4.15L6.5 8.5l4.15-1.35L12 3Z"/><path d="m18.5 14 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2ZM5 3.5l.55 1.45L7 5.5l-1.45.55L5 7.5l-.55-1.45L3 5.5l1.45-.55L5 3.5Z"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4l11-11a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12 15.3a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06-1.9 1.9-.06-.06A1.7 1.7 0 0 0 16 18.4a1.7 1.7 0 0 0-1.06 1.56V20h-2.68v-.08A1.7 1.7 0 0 0 11.2 18.4a1.7 1.7 0 0 0-1.87.34l-.06.06-1.9-1.9.06-.06A1.7 1.7 0 0 0 7.6 15a1.7 1.7 0 0 0-1.52-1.06H6v-2.68h.08A1.7 1.7 0 0 0 7.6 10.2a1.7 1.7 0 0 0-.34-1.87l-.06-.06 1.9-1.9.06.06A1.7 1.7 0 0 0 11.03 6.8 1.7 1.7 0 0 0 12.5 5.26V5h2.68v.08a1.7 1.7 0 0 0 1.06 1.52 1.7 1.7 0 0 0 1.87-.34l.06-.06 1.9 1.9-.06.06a1.7 1.7 0 0 0-.34 1.87 1.7 1.7 0 0 0 1.52 1.06H21v2.68h-.08A1.7 1.7 0 0 0 19.4 15Z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M18.4 9A7.5 7.5 0 0 0 6 6.5L4 9M5.6 15A7.5 7.5 0 0 0 18 17.5l2-2.5"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24"><path d="m4 16 5-5 4 4 7-8M15 7h5v5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.4 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 3.8 2.2c-.9.5-1.4 1-1.4 2M12 17h.01"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></symbol>
+      <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M10.6 6.2A9.9 9.9 0 0 1 12 6c6 0 9.5 6 9.5 6a16 16 0 0 1-2.2 2.8M6.2 6.3C3.9 7.9 2.5 12 2.5 12s3.5 6 9.5 6a9.8 9.8 0 0 0 4.3-.9M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v5h4M9 13h6M9 17h4"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a4.5 4.5 0 0 0 6.4.1l2-2a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2M14 11a4.5 4.5 0 0 0-6.4-.1l-2 2a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></symbol>
+      <symbol id="i-thumb-up" viewBox="0 0 24 24"><path d="M7 10v11H4V10h3ZM7 20h10.4a2 2 0 0 0 2-1.6l1.2-7A2 2 0 0 0 18.6 9H14l.8-4a2.5 2.5 0 0 0-2.4-3L7 10"/></symbol>
+      <symbol id="i-thumb-down" viewBox="0 0 24 24"><path d="M17 14V3h3v11h-3ZM17 4H6.6a2 2 0 0 0-2 1.6l-1.2 7A2 2 0 0 0 5.4 15H10l-.8 4a2.5 2.5 0 0 0 2.4 3l5.4-8"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 3h6l1 4H8l1-4ZM7 7l1 14h8l1-14M10 11v6M14 11v6"/></symbol>
+    </defs>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a href="#overview" class="brand" aria-label="Orbit 首页">
+          <span class="brand-mark"><span></span></span>
+          <span class="brand-word">orbit<span>.</span></span>
+        </a>
+        <button class="sidebar-collapse" id="sidebar-collapse" aria-label="收起侧边栏">
+          <svg><use href="#i-menu"/></svg>
+        </button>
+      </div>
+
+      <button class="workspace-switcher" id="project-switcher">
+        <span class="workspace-avatar" id="project-avatar">O</span>
+        <span class="workspace-copy"><strong id="sidebar-project-name">近郊旅游助手</strong><small id="sidebar-industry">工具效率 · Mock</small></span>
+        <svg><use href="#i-chevron-down"/></svg>
+      </button>
+
+      <nav class="side-nav" aria-label="主导航">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-item is-active" href="#overview" data-nav="overview">
+          <svg><use href="#i-grid"/></svg><span>项目总览</span>
+        </a>
+        <a class="nav-item" href="#trends" data-nav="trends">
+          <svg><use href="#i-radar"/></svg><span>趋势雷达</span>
+        </a>
+        <a class="nav-item" href="#feedback" data-nav="feedback">
+          <svg><use href="#i-message"/></svg><span>用户反馈</span><span class="nav-count" id="nav-feedback-count">0</span>
+        </a>
+        <a class="nav-item" href="#competitors" data-nav="competitors">
+          <svg><use href="#i-target"/></svg><span>竞品监控</span><span class="nav-count" id="nav-competitor-count">0</span>
+        </a>
+        <a class="nav-item" href="#ailab" data-nav="ailab">
+          <svg><use href="#i-sparkles"/></svg><span>AI Lab</span><span class="nav-beta">BYOK</span>
+        </a>
+
+        <p class="nav-label nav-label-spaced">Data</p>
+        <button class="nav-item nav-button" data-action="connections">
+          <svg><use href="#i-database"/></svg><span>数据源</span><span class="nav-status" id="source-count">0</span>
+        </button>
+        <button class="nav-item nav-button" id="settings-button" data-action="project-settings">
+          <svg><use href="#i-settings"/></svg><span>项目设置</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="source-status ai-status-button" id="sidebar-ai-status" data-action="go-ai">
+          <span class="source-status-icon"><svg><use href="#i-sparkles"/></svg></span>
+          <span class="source-status-copy"><strong id="sidebar-ai-title">AI 尚未连接</strong><small id="sidebar-ai-copy">配置 API 后启用</small></span>
+          <span class="live-dot is-offline" id="sidebar-ai-dot"></span>
+        </button>
+        <div class="sidebar-user">
+          <span class="user-avatar">ME</span>
+          <div><strong>本地工作区</strong><small>数据仅保存在浏览器</small></div>
+          <button data-action="settings-help" aria-label="帮助"><svg><use href="#i-help"/></svg></button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu" id="mobile-menu" aria-label="打开菜单"><svg><use href="#i-menu"/></svg></button>
+          <div class="breadcrumb"><strong id="top-project-name">新调研项目</strong><svg><use href="#i-chevron-right"/></svg><span id="breadcrumb-current">项目总览</span></div>
+        </div>
+        <div class="topbar-actions">
+          <button class="global-search" id="global-search">
+            <svg><use href="#i-search"/></svg><span>搜索</span><kbd>⌘ K</kbd>
+          </button>
+          <button class="ai-connection-pill" id="top-ai-status" data-action="go-ai"><span></span><b>AI 未连接</b></button>
+          <button class="btn btn-secondary top-export" data-action="export-report"><svg><use href="#i-download"/></svg>导出报告</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="page is-active" data-page="overview">
+          <div class="page-heading">
+            <h1>项目总览</h1>
+            <div class="heading-actions">
+              <button class="btn btn-secondary" data-action="go-feedback"><svg><use href="#i-upload"/></svg>导入反馈</button>
+              <button class="btn btn-primary" data-action="generate-overview"><svg><use href="#i-sparkles"/></svg>AI 生成洞察</button>
+            </div>
+          </div>
+
+          <div class="overview-kpis" id="overview-kpis"></div>
+
+          <div class="overview-priority-grid">
+            <article class="card insight-panel">
+              <div class="insight-panel-head">
+                <div class="panel-title-wrap"><span class="panel-icon blue"><svg><use href="#i-trending"/></svg></span><h2>功能诉求与迭代优先级</h2></div>
+                <span class="ai-source-badge">AI SUMMARY</span>
+              </div>
+              <div id="feature-priority-content" class="insight-panel-body"></div>
+            </article>
+
+            <article class="card insight-panel">
+              <div class="insight-panel-head">
+                <div class="panel-title-wrap"><span class="panel-icon coral"><svg><use href="#i-target"/></svg></span><h2>竞品动作与差异化占位</h2></div>
+                <span class="ai-source-badge">AI SUMMARY</span>
+              </div>
+              <div id="competitor-brief-content" class="insight-panel-body"></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid overview-lower-grid">
+            <article class="card data-readiness-card">
+              <div class="card-header"><div><h3>数据准备</h3></div><button class="text-link" data-action="connections">查看数据源 <svg><use href="#i-chevron-right"/></svg></button></div>
+              <div class="readiness-list" id="readiness-list"></div>
+            </article>
+            <article class="card recent-data-card">
+              <div class="card-header"><div><h3>最近数据</h3></div><span class="small-pill" id="recent-data-count">0 条</span></div>
+              <div id="recent-data-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" data-page="trends">
+          <div class="page-heading">
+            <h1>趋势雷达</h1>
+            <div class="heading-actions">
+              <button class="btn btn-secondary" id="trend-import-btn"><svg><use href="#i-upload"/></svg>导入趋势数据</button>
+            </div>
+          </div>
+
+          <div class="filter-bar trend-filter-bar">
+            <div class="platform-tabs" id="trend-platform-tabs"></div>
+            <div class="filter-divider"></div>
+            <span class="filter-result">共 <strong id="trend-signal-count">0</strong> 条信号</span>
+            <button class="filter-button" data-action="connections"><svg><use href="#i-database"/></svg>数据源<span id="trend-source-count">0</span><svg><use href="#i-chevron-down"/></svg></button>
+          </div>
+
+          <div class="dashboard-grid trend-main-grid">
+            <article class="card chart-card wide-chart-card">
+              <div class="card-header">
+                <div><h3>跨平台声量</h3></div>
+                <span class="source-connection" id="trend-data-status"><i></i>等待导入</span>
+              </div>
+              <div class="trend-stat-row">
+                <div><span>信号量</span><strong id="trend-stat-count">0</strong></div>
+                <div><span>总提及</span><strong id="trend-stat-mentions">0</strong></div>
+                <div><span>平台数</span><strong id="trend-stat-platforms">0</strong></div>
+              </div>
+              <div id="trend-chart" class="line-chart large" role="img" aria-label="趋势数据图"></div>
+            </article>
+
+            <article class="card data-source-config-card">
+              <div class="card-header">
+                <div><h3>数据源接入配置</h3></div>
+                <span class="status-chip success" id="trend-source-status">状态</span>
+              </div>
+              <div class="data-flow-status-card">
+                <span class="data-flow-icon"><svg><use href="#i-database"/></svg></span>
+                <div class="data-flow-copy">
+                  <strong id="trend-source-title">已连接数据源</strong>
+                  <span id="trend-source-detail">CSV / JSON / 应用商店评价</span>
+                </div>
+                <i class="data-flow-dot"></i>
+              </div>
+            </article>
+          </div>
+
+          <article class="card trend-keyword-card">
+            <div class="card-header">
+              <div><h3>关键词词云</h3></div>
+              <span class="small-pill" id="trend-keyword-count">0 个关键词</span>
+            </div>
+            <div class="trend-keyword-layout">
+              <div class="trend-word-cloud" id="trend-word-cloud" role="img" aria-label="趋势关键词权重词云"></div>
+              <div class="trend-keyword-ranking">
+                <div class="keyword-ranking-head"><strong>关键词占比</strong><span>按提及权重</span></div>
+                <div id="trend-keyword-ranking"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card trend-feed-card">
+            <div class="card-header"><div><h3>趋势信号</h3></div><button class="text-link" data-action="connections">接入更多数据源 <svg><use href="#i-arrow-up-right"/></svg></button></div>
+            <div class="trend-feed" id="trend-feed"></div>
+          </article>
+          <input type="file" id="trend-file-input" accept=".csv,.json,application/json,text/csv" hidden />
+        </section>
+
+        <section class="page" data-page="feedback">
+          <div class="page-heading">
+            <h1>用户反馈</h1>
+            <div class="heading-actions">
+              <button class="btn btn-secondary" data-action="download-template"><svg><use href="#i-download"/></svg>CSV 模板</button>
+              <button class="btn btn-primary" data-action="trigger-upload"><svg><use href="#i-upload"/></svg>导入反馈</button>
+            </div>
+          </div>
+
+          <div class="upload-banner" id="feedback-dropzone">
+            <div class="upload-banner-icon"><svg><use href="#i-upload"/></svg></div>
+            <div class="upload-banner-copy"><strong>拖入问卷或反馈 CSV</strong><p>支持内容、问题、来源、评分、日期字段</p></div>
+            <button class="btn btn-white" id="feedback-file-button">选择文件</button>
+            <input type="file" id="feedback-file-input" accept=".csv,text/csv" hidden />
+          </div>
+
+          <div class="feedback-operations-grid">
+            <article class="card review-api-card">
+              <div class="card-header">
+                <div><h3>应用商店评价</h3></div>
+                <button class="text-link" data-action="configure-reviews">配置接口 <svg><use href="#i-chevron-right"/></svg></button>
+              </div>
+              <div class="review-store-strip" id="review-store-strip"></div>
+              <div class="review-api-footer"><span id="review-api-status">App Store / 国内应用商店</span><span class="small-pill" id="review-connected-count">0 / 5</span></div>
+            </article>
+            <article class="card feedback-history-card">
+              <div class="card-header">
+                <div><h3>导入历史</h3></div>
+                <span class="small-pill" id="feedback-history-count">0 条</span>
+              </div>
+              <div class="feedback-history-list" id="feedback-history-list"></div>
+            </article>
+          </div>
+
+          <article class="survey-overview-card" id="feedback-overview">
+            <div class="survey-overview-head">
+              <div><h2>反馈总览</h2><span class="survey-state" id="feedback-analysis-badge">尚未导入</span></div>
+              <button class="btn btn-dark" data-action="ai-summarize-feedback"><svg><use href="#i-sparkles"/></svg>AI 总结</button>
+            </div>
+            <div class="survey-overview-meta" id="feedback-overview-meta"></div>
+            <p class="survey-overview-copy" id="feedback-summary-text">导入问卷或用户反馈后生成总览。</p>
+            <div class="survey-overview-stats" id="feedback-overview-stats"></div>
+          </article>
+
+          <div class="dashboard-grid feedback-main-grid">
+            <article class="card sentiment-card">
+              <div class="card-header"><div><h3>情感分布</h3></div><span class="small-pill" id="sentiment-total">0 条</span></div>
+              <div class="sentiment-body">
+                <div class="donut sentiment-donut empty-donut" id="sentiment-donut"><div><strong id="positive-share">0%</strong><span>正面反馈</span></div></div>
+                <div class="sentiment-legend" id="sentiment-legend"></div>
+              </div>
+            </article>
+            <article class="card theme-card">
+              <div class="card-header"><div><h3>问卷主题总结</h3></div><button class="more-button" data-action="view-method"><svg><use href="#i-more"/></svg></button></div>
+              <div class="theme-bars" id="theme-bars"></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid feedback-source-grid">
+            <article class="card source-breakdown-card">
+              <div class="card-header"><div><h3>数据来源</h3></div><span class="small-pill" id="survey-source-count">0 个</span></div>
+              <div id="source-breakdown"></div>
+            </article>
+            <article class="card question-summary-card">
+              <div class="card-header"><div><h3>问卷问题总结</h3></div></div>
+              <div id="survey-question-summary"></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid feedback-bottom-grid">
+            <article class="card feedback-table-card">
+              <div class="card-header"><div><h3>反馈明细</h3></div><div class="table-tools"><span class="status-chip success" id="feedback-table-state">待导入</span></div></div>
+              <div class="feedback-table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>反馈内容</th><th>问题</th><th>来源</th><th>情感</th><th>主题</th></tr></thead>
+                  <tbody id="feedback-table-body"></tbody>
+                </table>
+              </div>
+            </article>
+            <article class="card quote-card">
+              <div class="card-header"><div><h3>代表性原声</h3></div><svg class="quote-mark" viewBox="0 0 32 24"><path d="M0 24V13.7C0 5.4 4.7.5 13.1 0v5.6C8.8 6.6 7 9.2 7 12h6v12H0Zm19 0V13.7C19 5.4 23.7.5 32 0v5.6c-4.3 1-6.1 3.6-6.1 6.4H32v12H19Z"/></svg></div>
+              <div id="quote-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" data-page="competitors">
+          <div class="page-heading">
+            <h1>竞品监控</h1>
+            <div class="heading-actions">
+              <button class="btn btn-primary" data-action="add-competitor"><svg><use href="#i-plus"/></svg>添加竞品</button>
+            </div>
+          </div>
+
+          <div class="competitor-summary" id="competitor-summary"></div>
+          <div class="competitor-toolbar">
+            <div class="category-tabs" id="category-tabs"></div>
+            <div class="competitor-toolbar-right"><button class="filter-button" data-action="connections"><svg><use href="#i-database"/></svg>数据来源</button></div>
+          </div>
+          <div class="competitor-grid" id="competitor-grid"></div>
+
+          <div class="dashboard-grid competitor-bottom-grid">
+            <article class="card signal-stream">
+              <div class="card-header"><div><h3>竞品动作记录</h3></div><span class="small-pill" id="competitor-signal-count">0 条</span></div>
+              <div class="signal-stream-list" id="competitor-stream-list"></div>
+            </article>
+            <article class="card competitor-feedback-card">
+              <div class="card-header"><div><h3>竞品用户反馈</h3></div><span class="small-pill" id="competitor-feedback-count">0 条</span></div>
+              <div class="competitor-feedback-list" id="competitor-feedback-list"></div>
+            </article>
+          </div>
+
+          <article class="card differentiation-card competitor-diff-table-card">
+            <div class="card-header"><div><h3>差异化占位</h3></div><span class="small-pill" id="differentiation-count">0 个竞品</span></div>
+            <div id="differentiation-space"></div>
+          </article>
+        </section>
+
+        <section class="page" data-page="ailab">
+          <div class="page-heading">
+            <h1>AI Lab</h1>
+            <div class="heading-actions"><span class="lab-mode" id="ai-status-pill"><i></i>未连接</span></div>
+          </div>
+
+          <div class="ai-console-grid">
+            <article class="card ai-config-card">
+              <div class="card-header"><div><h3>API 接入</h3></div><span class="small-pill">BYOK</span></div>
+              <label class="field-label" for="ai-base-url">Base URL</label>
+              <input class="form-input" id="ai-base-url" placeholder="https://api.openai.com/v1" />
+              <label class="field-label" for="ai-model">模型</label>
+              <input class="form-input" id="ai-model" placeholder="模型名称" />
+              <label class="field-label" for="ai-api-key">API Key</label>
+              <div class="password-field"><input class="form-input" id="ai-api-key" type="password" autocomplete="off" placeholder="仅保存在当前浏览器会话" /><button id="toggle-key-visibility" aria-label="显示 Key" aria-pressed="false"><svg><use href="#i-eye"/></svg></button></div>
+              <p class="security-note"><svg><use href="#i-check"/></svg>Key 仅存于 sessionStorage，不写入项目代码。</p>
+              <div class="ai-config-actions"><button class="btn btn-primary" id="save-ai-config"><svg><use href="#i-check"/></svg>保存</button><button class="btn btn-secondary" id="test-ai-connection"><svg><use href="#i-zap"/></svg>测试连接</button></div>
+              <div class="ai-connect-status" id="ai-connect-status">尚未连接 AI 服务</div>
+            </article>
+
+            <article class="card ai-workbench-card">
+              <div class="ai-mode-tabs">
+                <button class="active" data-ai-mode="copy">AI 文案对比</button>
+                <button data-ai-mode="file">文件分析</button>
+              </div>
+              <div class="ai-task-copy">
+                <label class="field-label" for="ai-prompt">任务</label>
+                <textarea class="form-input ai-prompt-input" id="ai-prompt" rows="7" placeholder="描述你想验证的文案任务、目标用户和渠道。"></textarea>
+              </div>
+              <div class="ai-file-area" id="ai-file-area">
+                <div class="ai-file-dropzone" id="ai-file-dropzone">
+                  <span class="upload-banner-icon"><svg><use href="#i-file"/></svg></span>
+                  <div><strong>上传调研文件</strong><p>TXT、MD、CSV、JSON，最大 1 MB</p></div>
+                  <button class="btn btn-secondary" id="ai-file-button">选择文件</button>
+                  <input type="file" id="ai-file-input" accept=".txt,.md,.csv,.json,.log" hidden />
+                </div>
+                <div class="ai-file-selected" id="ai-file-selected"></div>
+              </div>
+              <button class="btn btn-primary ai-run-button" id="run-ai"><svg><use href="#i-sparkles"/></svg>运行 AI 分析</button>
+              <div class="ai-run-status" id="ai-run-status"></div>
+            </article>
+          </div>
+
+          <article class="card ai-result-card">
+            <div class="card-header"><div><h3 id="ai-result-title">分析结果</h3></div><button class="more-button" data-action="copy-ai-result" aria-label="复制结果"><svg><use href="#i-copy"/></svg></button></div>
+            <div class="ai-result" id="ai-result"><div class="empty-state-large"><span class="empty-icon"><svg><use href="#i-sparkles"/></svg></span><strong>还没有分析结果</strong><p>配置 API 后运行文案测试或文件分析。</p></div></div>
+          </article>
+
+          <article class="card ai-history-card">
+            <div class="card-header"><div><h3>运行记录</h3></div><span class="small-pill" id="ai-history-count">0 条</span></div>
+            <div id="ai-history"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop command-backdrop" id="command-modal" aria-hidden="true">
+    <div class="command-panel" role="dialog" aria-modal="true" aria-label="全局搜索">
+      <div class="command-input-wrap"><svg><use href="#i-search"/></svg><input id="command-input" placeholder="搜索页面、竞品或操作" autocomplete="off" /><kbd>ESC</kbd></div>
+      <div class="command-results" id="command-results"></div>
+      <div class="command-footer"><span><kbd>↑</kbd><kbd>↓</kbd> 导航</span><span><kbd>↵</kbd> 打开</span><span><kbd>esc</kbd> 关闭</span></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button class="modal-close" data-close-modal="project-modal"><svg><use href="#i-close"/></svg></button>
+      <h2 id="project-modal-title">项目设置</h2>
+      <form id="project-form">
+        <label class="field-label" for="project-select">我的项目</label>
+        <select class="select-control full" id="project-select" name="projectId"></select>
+        <label class="field-label" for="project-name-input">项目名称</label>
+        <input class="form-input" id="project-name-input" name="name" placeholder="输入项目名称" required />
+        <label class="field-label" for="project-industry-select">产品类型</label>
+        <select class="select-control full" id="project-industry-select" name="industry"></select>
+        <div class="workspace-tools">
+          <div><strong>工作区备份</strong><span>导出全部项目；文件不包含 API Key 或评价 Token。</span></div>
+          <div class="workspace-tool-actions">
+            <button type="button" class="btn btn-secondary" data-action="export-workspace"><svg><use href="#i-download"/></svg>导出</button>
+            <button type="button" class="btn btn-secondary" data-action="import-workspace"><svg><use href="#i-upload"/></svg>导入</button>
+            <input type="file" id="workspace-import-input" accept=".json,application/json" hidden />
+          </div>
+        </div>
+        <div class="modal-actions"><button type="button" class="btn btn-danger-ghost modal-danger-left" data-action="delete-project"><svg><use href="#i-trash"/></svg>删除当前项目</button><button type="button" class="btn btn-secondary" data-close-modal="project-modal">取消</button><button type="submit" class="btn btn-primary">保存并切换</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="competitor-modal" aria-hidden="true">
+    <div class="modal-panel competitor-form-panel" role="dialog" aria-modal="true" aria-labelledby="competitor-modal-title">
+      <button class="modal-close" data-close-modal="competitor-modal"><svg><use href="#i-close"/></svg></button>
+      <h2 id="competitor-modal-title">添加竞品</h2>
+      <form id="competitor-form">
+        <input type="hidden" id="competitor-id" name="id" value="" />
+        <div class="form-section">
+          <label class="field-label" for="competitor-name">产品名称</label>
+          <input class="form-input" id="competitor-name" name="name" placeholder="输入产品名称" required />
+
+          <label class="field-label">所属大类（单选）</label>
+          <div class="choice-grid choice-grid-category" id="competitor-category-options"></div>
+
+          <label class="field-label">细分赛道（多选）</label>
+          <div class="track-options" id="competitor-track-options"></div>
+
+          <label class="field-label">核心诉求（单选）</label>
+          <div class="choice-grid choice-grid-four" id="competitor-need-options"></div>
+
+          <label class="field-label">主攻市场（单选）</label>
+          <div class="choice-grid choice-grid-four" id="competitor-market-options"></div>
+        </div>
+
+        <details class="competitor-extra-fields">
+          <summary><span>补充信息</span><small>核心占位、痛点、机会点与数据来源</small></summary>
+          <div class="field-row">
+            <div><label class="field-label" for="competitor-website">官网</label><input class="form-input" id="competitor-website" name="website" placeholder="example.com" /></div>
+            <div><label class="field-label" for="competitor-price">价格</label><input class="form-input" id="competitor-price" name="price" placeholder="免费 / 订阅 / 按需" /></div>
+          </div>
+          <label class="field-label" for="competitor-description">产品定位</label>
+          <textarea class="form-input" id="competitor-description" name="description" rows="2" placeholder="一句话描述竞品定位"></textarea>
+          <div class="field-row">
+            <div><label class="field-label" for="competitor-killer">核心占位（杀手锏）</label><input class="form-input" id="competitor-killer" name="killer" placeholder="它最核心的产品优势" /></div>
+            <div><label class="field-label" for="competitor-pain-point">痛点</label><input class="form-input" id="competitor-pain-point" name="painPoint" placeholder="尚未解决的用户痛点" /></div>
+          </div>
+          <label class="field-label" for="competitor-opportunity">机会点</label>
+          <textarea class="form-input" id="competitor-opportunity" name="opportunity" rows="2" placeholder="我们可以切入的差异化机会"></textarea>
+          <label class="field-label" for="competitor-signal">竞品动作</label>
+          <textarea class="form-input" id="competitor-signal" name="signal" rows="2" placeholder="近期上线、改价、投放、合作等动作，可分行"></textarea>
+          <label class="field-label" for="competitor-user-feedback">用户反馈</label>
+          <textarea class="form-input" id="competitor-user-feedback" name="userFeedback" rows="3" placeholder="每条用户反馈独占一行"></textarea>
+          <div class="field-row">
+            <div><label class="field-label" for="competitor-source">数据来源</label><input class="form-input" id="competitor-source" name="source" placeholder="官网 / 商店 / 访谈" /></div>
+            <div><label class="field-label" for="competitor-monitor">监控状态</label><select class="select-control full" id="competitor-monitor" name="monitor"><option value="true">持续监控</option><option value="false">仅保存</option></select></div>
+          </div>
+        </details>
+
+        <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-modal="competitor-modal">取消</button><button type="submit" class="btn btn-primary" id="competitor-submit">保存竞品</button></div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="review-source-modal" aria-hidden="true">
+    <div class="modal-panel review-source-panel" role="dialog" aria-modal="true" aria-labelledby="review-source-title">
+      <button class="modal-close" data-close-modal="review-source-modal"><svg><use href="#i-close"/></svg></button>
+      <h2 id="review-source-title">应用商店评价接入</h2>
+      <div class="review-store-selector" id="review-store-options"></div>
+      <div class="field-row">
+        <div><label class="field-label" for="review-app-id">App ID / 应用包名</label><input class="form-input" id="review-app-id" placeholder="输入自己的产品 ID" /></div>
+        <div id="review-region-field"><label class="field-label" for="review-region">App Store 地区</label><select class="select-control full" id="review-region"><option value="cn">中国大陆</option><option value="us">美国</option><option value="gb">英国</option><option value="jp">日本</option></select></div>
+      </div>
+      <div id="review-enterprise-fields">
+        <label class="field-label" for="review-endpoint">企业评价 API Endpoint</label>
+        <input class="form-input" id="review-endpoint" placeholder="https://官方应用商店域名/评价接口" />
+        <label class="field-label" for="review-access-token">Access Token</label>
+        <input class="form-input" id="review-access-token" type="password" autocomplete="off" placeholder="仅保存在当前浏览器会话" />
+      </div>
+      <div class="review-source-note" id="review-source-note"></div>
+      <div class="review-sync-actions"><button class="btn btn-primary" id="sync-store-reviews"><svg><use href="#i-refresh"/></svg>同步评价</button><span id="review-sync-status">等待配置</span></div>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="detail-modal" aria-hidden="true">
+    <div class="modal-panel detail-modal-panel" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+      <button class="modal-close" data-close-modal="detail-modal"><svg><use href="#i-close"/></svg></button>
+      <div id="detail-modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="confirm-modal" aria-hidden="true">
+    <div class="modal-panel confirm-modal-panel" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title" aria-describedby="confirm-modal-message">
+      <button class="modal-close" data-close-modal="confirm-modal"><svg><use href="#i-close"/></svg></button>
+      <h2 id="confirm-modal-title">确认操作</h2>
+      <p class="confirm-modal-message" id="confirm-modal-message"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-modal="confirm-modal">取消</button><button type="button" class="btn btn-danger" id="confirm-modal-submit">确认删除</button></div>
+    </div>
+  </div>
+
+  <div class="toast-root" id="toast-root" aria-live="polite"></div>
+  <script src="assets/data.js?v=28"></script>
+  <script src="assets/demo-data.js?v=28"></script>
+  <script src="assets/app.js?v=28"></script>
+</body>
+</html>
